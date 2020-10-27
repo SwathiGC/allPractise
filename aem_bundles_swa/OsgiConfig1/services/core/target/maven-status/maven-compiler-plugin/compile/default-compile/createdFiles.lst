@@ -1,0 +1,7 @@
+com\osgi1\check\serv\ReadNameServlet.class
+com\osgi1\check\impl\NameImpl.class
+com\osgi1\check\config\Names.class
+com\osgi1\check\config\CheckNameConfig.class
+com\osgi1\check\model\ChcekInfoSling.class
+com\osgi1\check\configread\CustomConfig.class
+com\osgi1\check\INames.class

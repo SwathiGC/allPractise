@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1586938659291
+Build-Jdk: 1.8.0_241
+Built-By: Admin
+Bundle-Description: Core bundle for Call
+Bundle-ManifestVersion: 2
+Bundle-Name: HelloSlingModel - Core
+Bundle-SymbolicName: HelloSlingModel.core
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.rafters.technology;version="1.0.0";uses:="javax.anno
+ tation,javax.inject,org.apache.sling.api.resource,org.apache.sling.mode
+ ls.annotations"
+Import-Package: javax.inject;version="0.0.0",javax.annotation,org.apache
+ .sling.api.resource;version="[2.9,3)",org.apache.sling.models.annotatio
+ ns;version="[1.2,2)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Sling-Model-Packages: com.rafters.technology
+Tool: Bnd-3.3.0.201609221906

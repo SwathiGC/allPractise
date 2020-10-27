@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workspaceFilter version="1.0">
+    <filter root="/apps">
+        <exclude pattern="/apps(/.*)" />
+        <include pattern="/apps/servletsServices/install(/.*)" />
+        <include pattern="/apps/RepoFetcher/install(/.*)" />
+    </filter>
+</workspaceFilter>

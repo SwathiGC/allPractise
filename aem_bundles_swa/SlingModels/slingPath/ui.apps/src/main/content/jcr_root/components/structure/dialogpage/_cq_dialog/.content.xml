@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="We train title"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <title
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Leave empty to use the page title."
+                fieldLabel="Title"
+                name="./title"/>
+            <checkbox1
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/checkbox"
+                name="./checkValue"
+                text="like Fruits"
+                uncheckedValue="no fruits"
+                value="Fruits"/>
+            <capital
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                name="./isCapital"
+                text="is capital?"
+                uncheckedValue="not selected"
+                value="This is Capital"/>
+            <checkbox2
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/checkbox"
+                name="./checkValue2"
+                text="like Vegetables"
+                uncheckedValue="no veges"
+                value="Vegetables"/>
+            <buton_label
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Leave empty to use the page title."
+                fieldLabel="Button Label"
+                name="./button_label"
+                value="Submit"/>
+        </items>
+    </content>
+</jcr:root>

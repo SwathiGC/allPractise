@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1586159748147
+Build-Jdk: 1.8.0_241
+Built-By: Admin
+Bundle-Description: Core bundle of Osgi Config Info
+Bundle-ManifestVersion: 2
+Bundle-Name: ReadOsgiConfigInfo - Core
+Bundle-SymbolicName: ReadOsgiConfigInfo.core
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.tech.dcj;version="1.0.0";uses:="org.apache.sling.api
+ .resource,org.apache.sling.models.annotations"
+Import-Package: javax.annotation,org.apache.sling.api.resource;version="
+ [2.9,3)",org.apache.sling.models.annotations;version="[1.2,2)",org.apac
+ he.sling.models.annotations.injectorspecific;version="[1.1,2)",org.osgi
+ .framework;version="[1.8,2)",org.osgi.service.cm;version="[1.5,2)",org.
+ slf4j;version="[1.5,2)",javax.inject;version="0.0.0"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Sling-Model-Packages: com.tech.dcj
+Tool: Bnd-3.3.0.201609221906

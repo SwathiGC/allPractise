@@ -1,0 +1,287 @@
+<project xmlns = "http://maven.apache.org/POM/4.0.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation = " http://maven.apache.org/POM/4.0.0
+ http://maven.apache.org/xsd/maven-4.0.0.xsd
+
+ ">
+ <modelVersion>4.0.0</modelVersion>
+ <groupId>com.tech.raft</groupId>
+ <artifactId>EchoMessage</artifactId>
+ <packaging>bundle</packaging>
+ <version>1.0</version>
+ <properties>
+   <sling.user>admin</sling.user>
+   <sling.password>admin</sling.password>
+   <vault.user>admin</vault.user>
+  <vault.password>admin</vault.password>
+ </properties>
+<!--  <dependencies>
+  <dependency>
+    <groupId>javax.inject</groupId>
+    <artifactId>javax.inject</artifactId>
+    <version>1</version>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.sling</groupId>
+    <artifactId>org.apache.sling.models.api</artifactId>
+    <version>1.3.2</version>
+    <scope>provided</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.sling</groupId>
+    <artifactId>org.apache.sling.api</artifactId>
+    <version>2.18.4</version>
+    <scope>provided</scope>
+  </dependency>
+
+
+  <dependency>
+   <groupId>junit</groupId>
+   <artifactId>junit</artifactId>
+   <version>3.8.1</version>
+ </dependency>
+ <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.models.api -->
+ <dependency>
+   <groupId>org.osgi</groupId>
+   <artifactId>org.osgi.annotation</artifactId>
+   <version>6.0.0</version>
+   <scope>provided</scope>
+ </dependency>
+ <!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+ <dependency>
+   <groupId>javax.annotation</groupId>
+   <artifactId>javax.annotation-api</artifactId>
+   <version>1.2</version>
+ </dependency>
+</dependencies> -->
+<build>
+  <resources>
+    <!-- define the resources that will go into the package -->
+    <resource>
+      <directory>${basedir}/src/main/content//jcr_root</directory>
+      <excludes>
+        <!-- exclude .vlt control files in the package -->
+        <exclude>**/.vlt</exclude>
+        <exclude>**/.vltignore</exclude>
+        <exclude>**/.gitignore</exclude>
+        <exclude>**/*.iml</exclude>
+        <exclude>**/.classpath</exclude>
+        <exclude>**/.project</exclude>
+        <exclude>**/.settings</exclude>
+        <exclude>**/.DS_Store</exclude>
+        <exclude>**/target/**</exclude>
+        <exclude>**/pom.xml</exclude>
+      </excludes>
+    </resource>
+  </resources>
+  <plugins>
+   
+     <!--   <plugin><groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <configuration>
+        <useDefaultManifestFile>true</useDefaultManifestFile>
+      </configuration></plugin>
+ -->
+       <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+            </plugin>
+    
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-deploy-plugin</artifactId>
+      <version>2.8.2</version>
+    </plugin>
+    <!-- Apache Sling Plugin -->
+    <plugin>
+      <groupId>org.apache.sling</groupId>
+      <artifactId>maven-sling-plugin</artifactId>
+      <version>2.2.0</version>
+      <configuration>
+        <slingUrl>http://localhost:4502/system/console</slingUrl>
+        <deploymentMethod>WebConsole</deploymentMethod>
+      </configuration>
+    </plugin>
+    <!-- HTL Maven Plugin -->
+    <plugin>
+      <groupId>org.apache.sling</groupId>
+      <artifactId>htl-maven-plugin</artifactId>
+      <version>1.0.6</version>
+      <configuration>
+        <failOnWarnings>true</failOnWarnings>
+      </configuration>
+      <executions>
+        <execution>
+          <goals>
+            <goal>validate</goal>
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
+    <!-- Content Package Plugin -->
+    <plugin>
+      <groupId>com.day.jcr.vault</groupId>
+      <artifactId>content-package-maven-plugin</artifactId>
+      <version>0.5.1</version>
+      <configuration>
+        <targetURL>http://localhost:4502/crx/packmgr/service.jsp</targetURL>
+        <failOnError>true</failOnError> 
+        <failOnMissingEmbed>true</failOnMissingEmbed>
+        <name>HelloWorldPlugin</name> 
+        <userId>${vault.user}</userId>
+        <password>${vault.password}</password>
+      </configuration>
+    </plugin> 
+    <plugin>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>maven-bundle-plugin</artifactId>
+      <version>3.0.1</version>
+      <extensions>true</extensions>
+      <configuration>
+        <instructions>
+          <Bundle-SymbolicName>${project.groupId}</Bundle-SymbolicName>
+          <Bundle-Version>${project.version}</Bundle-Version>
+          <Export-Package>*</Export-Package>
+          <Embed-Dependency>*;scope=compile|runtime</Embed-Dependency>
+          <Embed-Directory>target/dependency</Embed-Directory>
+          <Sling-Model-Packages>
+            com.raft.technology
+          </Sling-Model-Packages>
+        </instructions>
+      </configuration>
+      <executions>
+        <execution>
+          <id>bundle-manifest</id>
+          <phase>process-classes</phase>
+          <goals>
+            <goal>manifest</goal>
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
+    <!-- Apache Felix Bundle Plugin 
+    <plugin>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>maven-bundle-plugin</artifactId>
+      <version>3.3.0</version>
+      <inherited>true</inherited>
+    </plugin>-->
+    <!-- Maven Enforcer Plugin -->
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-enforcer-plugin</artifactId>
+      <version>1.4.1</version>
+    </plugin>
+    <!-- Maven Dependency Plugin -->
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-dependency-plugin</artifactId>
+      <version>3.0.0</version>
+    </plugin>
+    <!-- Build Helper Maven Plugin -->
+    <plugin>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>build-helper-maven-plugin</artifactId>
+      <version>3.0.0</version>
+    </plugin>
+
+    
+  </plugins>
+  
+  
+</build>
+<profiles>
+  <profile>
+    <id>autoInstallBundle</id>
+            <!--
+                To enable this feature for a bundle, the maven-sling-plugin
+                (without configuration) needs to be included:
+
+                <plugin>
+                    <groupId>org.apache.sling</groupId>
+                    <artifactId>maven-sling-plugin</artifactId>
+                </plugin>
+              -->
+              <activation>
+                <activeByDefault>false</activeByDefault>
+              </activation>
+              <build>
+                <pluginManagement>
+                  <plugins>
+                    <plugin>
+                      <groupId>org.apache.sling</groupId>
+                      <artifactId>maven-sling-plugin</artifactId>
+                      <executions>
+                        <execution>
+                          <id>install-bundle</id>
+                          <goals>
+                            <goal>install</goal>
+                          </goals>
+                        </execution>
+                      </executions>
+                    </plugin>
+                  </plugins>
+                </pluginManagement>
+              </build>
+            </profile>
+
+            <profile>
+              <id>autoInstallPackage</id>
+              <activation>
+                <activeByDefault>false</activeByDefault>
+              </activation>
+              <build>
+                <pluginManagement>
+                  <plugins>
+                    <plugin>
+                      <groupId>com.day.jcr.vault</groupId>
+                      <artifactId>content-package-maven-plugin</artifactId>
+                      <executions>
+                        <execution>
+                          <id>install-package</id> 
+                          <goals>
+                            <goal>install</goal>
+                          </goals>
+                          <configuration>
+                            <targetURL>http://localhost:4502/crx/packmgr/service.jsp</targetURL>
+                          </configuration>
+                        </execution>
+                      </executions>
+                    </plugin>
+                  </plugins>
+                </pluginManagement>
+              </build>
+            </profile>
+
+            <profile>
+              <id>autoInstallPackagePublish</id>
+              <activation>
+                <activeByDefault>false</activeByDefault>
+              </activation>
+              <build>
+                <pluginManagement>
+                  <plugins>
+                   <!--  <plugin>
+                      <groupId>com.day.jcr.vault</groupId>
+                      <artifactId>content-package-maven-plugin</artifactId>
+                      <executions>
+                        <execution>
+                          <id>install-package-publish</id>
+                          <goals>
+                            <goal>install</goal>
+                          </goals>
+                          <configuration>
+                            <targetURL>http://${aem.publish.host}:${aem.publish.port}/crx/packmgr/service.jsp</targetURL>
+                          </configuration>
+                        </execution>
+                      </executions>
+                    </plugin> -->
+                  </plugins>
+                </pluginManagement>
+              </build>
+            </profile>
+
+          </profiles>
+
+        </project>

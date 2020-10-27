@@ -1,0 +1,4 @@
+com\raft\repo\sightly\GitSightImpl.class
+com\raft\repo\repo_without\Igit.class
+com\raft\repo\sightly\IgitSight.class
+com\raft\repo\repo_without\IgitImpl.class

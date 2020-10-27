@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+    http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.adobe.example.myapp</groupId>
+  <artifactId>workflow-mbean</artifactId>
+  <version>0.0.3-SNAPSHOT</version>
+ 
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.day.jcr.vault</groupId>
+        <artifactId>content-package-maven-plugin</artifactId>
+        <version>0.0.24</version>
+        <configuration>
+          <builtContentDirectory>jcr_root</builtContentDirectory>
+          <targetURL>http://localhost:4502/crx/packmgr/service.jsp</targetURL>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>package</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

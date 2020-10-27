@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1583385165793
+Build-Jdk: 1.8.0_241
+Built-By: Admin
+Bundle-ManifestVersion: 2
+Bundle-Name: calculationAnS
+Bundle-SymbolicName: com.raft.calcu.caluclation
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.raft.add;version="1.0.0",com.raft.calcu;version="1.0
+ .0",com.raft.sub;version="1.0.0"
+Import-Package: com.raft.add;version="[1.0,2)",com.raft.sub;version="[1.
+ 0,2)",javax.inject;version="0.0.0"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.6))"
+Sling-Model-Packages: com.raft
+Tool: Bnd-3.3.0.201609221906

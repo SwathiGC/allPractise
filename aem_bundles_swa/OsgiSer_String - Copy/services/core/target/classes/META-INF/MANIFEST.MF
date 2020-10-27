@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1583738045815
+Build-Jdk: 1.8.0_241
+Built-By: Admin
+Bundle-Description: Core bundle for Call
+Bundle-ManifestVersion: 2
+Bundle-Name: APIServlet - Core
+Bundle-SymbolicName: APIServlet.core
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.tech.call;version="1.0.0";uses:="org.apache.sling.ap
+ i,org.apache.sling.api.servlets"
+Import-Package: com.tech.repo;version="[1.0,2)",javax.servlet,org.apache
+ .sling.api;version="[2.3,3)",org.apache.sling.api.servlets;version="[2.
+ 1,3)",javax.inject;version="0.0.0"
+Provide-Capability: osgi.service;objectClass:List<String>="com.tech.call
+ .IcallService",osgi.service;objectClass:List<String>="javax.servlet.Ser
+ vlet"
+Require-Capability: osgi.extender;filter:="(&(osgi.extender=osgi.compone
+ nt)(version>=1.3.0)(!(version>=2.0.0)))",osgi.service;filter:="(objectC
+ lass=com.tech.call.IcallService)";effective:=active,osgi.service;filter
+ :="(objectClass=com.tech.repo.Irepo)";effective:=active,osgi.ee;filter:
+ ="(&(osgi.ee=JavaSE)(version=1.8))"
+Service-Component: OSGI-INF/com.tech.call.IcallServiceImpl.xml,OSGI-INF/
+ com.tech.call.IcallServlet.xml,OSGI-INF/com.tech.call.RepoFetcherServle
+ t.xml
+Sling-Model-Packages: com.moonraft.slingservlet
+Tool: Bnd-3.3.0.201609221906

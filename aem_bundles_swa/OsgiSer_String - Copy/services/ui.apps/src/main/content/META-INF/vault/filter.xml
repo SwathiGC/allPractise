@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter vesion="1.0">
+    <!--
+    <filter root="/apps/geometrixx">
+        <exclude pattern="^.*/form.*$" />
+    </filter>
+    <filter root="/content/geometrixx" />
+    -->
+    <filter root="/apps">
+
+        <exclude pattern="/apps(/.*)" />
+        <include pattern="/apps/servletsServices/install(/.*)" />
+        <include pattern="/apps/RepoFetcher/install(/.*)" />
+    </filter>
+   <!-- <filter root="/etc/">
+            <include pattern="/etc(/.*)"/>
+    </filter>-->
+
+</workspaceFilter>

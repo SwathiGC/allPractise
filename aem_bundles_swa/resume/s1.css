@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+html,
+body {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /*-webkit-transition: 0.5s;
+  transition: 0.5s;*/
+  background: white;
+  font-family:sans-serif;
+  /*font-family: "Montserrat", sans-serif;*/
+}
+
+.row{
+  width:960px;
+  background: #1a237e;
+  color: white;
+  margin: 20px auto;
+  box-shadow: 10px 10px black;
+  position: relative;
+  display: flex;
+  font-family:Montserrat;
+}
+
+.row .intoduc
+.row .wrk_edu_exp_pje{
+   box-sizing: border-box;
+   float: left;
+}
+.row .intoduc{
+  width:22%;
+  min-height:100%;
+  background-color:#ffb300;
+  padding:30px 15px 40px 15px;
+  text-align:center;
+  color: #283593;
+}
+
+.row .intoduc .rocket{
+  font-size: 100px;
+  text-align: center;
+  margin: auto;
+  color: #283593
+}
+
+.row .intoduc .cntct ul li{
+ 
+  display: inline-block;
+  font-size:40px;
+  padding:0;
+  width:30%;
+  color: #283593;
+  
+}
+.row .intoduc .self_intro{
+  text-align: left;
+}
+
+.row .wrk_edu_exp_pje{
+  width: 100%;
+  padding:30px;
+}
+.row .wrk_edu_exp_pje:hover div{
+/*transition-duration: 0.5s;*/
+opacity:0.5;
+}
+.row .wrk_edu_exp_pje:hover div:hover{
+  opacity:2;
+}
+.row .wrk_edu_exp_pje .educa,
+.row .wrk_edu_exp_pje .exp
+{
+  float:left;
+ 
+}
+.row .wrk_edu_exp_pje .educa{
+ /* width:40%;
+  padding:5px;
+
+
+  
+   background: yellow;*283593*/
+  width: 48%;
+  /*background:#283593;*/
+  padding: 15px;
+  margin: 0 15px 15px 0;
+  
+}
+.row .wrk_edu_exp_pje .educa ul li span{
+    font-size:25px;
+}
+.row .wrk_edu_exp_pje .educa ul li small{
+    font-size:15px;
+}
+.row .wrk_edu_exp_pje .educa i,
+.row .wrk_edu_exp_pje .exp i{
+  font-size:40px;
+  color:orange;
+
+}
+.row .wrk_edu_exp_pje .educa li,
+.row .wrk_edu_exp_pje .exp li
+{
+  font-size:20px;
+  color:white;
+}
+.row .wrk_edu_exp_pje .exp{
+ /* width: 48%;
+  background-color: magenta;*/
+  width:38%;
+  background: #283593;
+  padding:23px;
+
+}
+.row .wrk_edu_exp_pje .exp ul li span{
+  font-size:25px;
+}
+.row .wrk_edu_exp_pje .exp ul li small{
+  font-size:15px;
+}
+
+.row .wrk_edu_exp_pje .educa::after
+.row .wrk_edu_exp_pje .exp::after
+{
+  clear: both;
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+
+.row .wrk_edu_exp_pje .skills_sets
+{
+  clear: both;
+  background: #283593;
+  /*margin-top:100px; */
+  padding:5px;
+}
+
+.row .wrk_edu_exp_pje .skills_sets .skill_size{
+  font-size:15px;
+}
+.row .wrk_edu_exp_pje .skills_sets ul li{
+    display:inline-block;
+    width:30%;
+    margin-top:8px;
+    /*border:5px solid black;*/
+    text-align:center;
+
+
+  
+}
+.row .wrk_edu_exp_pje .skills_sets  i{
+    font-size:50px;
+    color:orange;
+    line-height:32px;
+}
+.row .wrk_edu_exp_pje .skills_sets span{
+    display: block;
+    text-align:center;
+    font-size:25px;
+}
+.row .wrk_edu_exp_pje .skills_sets h3{
+  font-size:45px;
+  color:orange;
+}
+.row .wrk_edu_exp_pje .projects{
+  clear: both;
+  background: #283593;
+  margin-top:8px;
+   padding:12px;
+}
+.row .wrk_edu_exp_pje .projects .pjects_title{
+  font-size:35px;
+  color:orange;
+ /* padding:12px;*/
+}
+.row .wrk_edu_exp_pje .projects ul{
+
+}
+.row .wrk_edu_exp_pje .projects li{
+  font-size:25px;
+}
+.row .wrk_edu_exp_pje .projects small{
+  font-size:20px;
+}
+.row .wrk_edu_exp_pje .intre_acti{
+  clear:both;
+  background-color:#283593;
+  content: "";
+  color:orange;
+  margin-top:8px;
+  font-size:20px;
+  padding:15px;
+  /*height:150px;*/
+}
+.row .wrk_edu_exp_pje .intre_acti i{
+  color:orange;
+
+}
+.row .wrk_edu_exp_pje .intre_acti li{
+  display: inline-block;
+  width:30%;
+  color: white;
+  font-size:30px;
+ 
+  text-align: center;
+}
+.row .wrk_edu_exp_pje .intre_acti span{
+  display:block;
+  text-align: center;
+}
+.row .wrk_edu_exp_pje .intre_acti ul{
+ /* text-align: center;*/
+}

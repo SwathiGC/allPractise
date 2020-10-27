@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1583735395770
+Build-Jdk: 1.8.0_241
+Built-By: Admin
+Bundle-Description: Core bundle for Call
+Bundle-ManifestVersion: 2
+Bundle-Name: RepoFetcher - Core
+Bundle-SymbolicName: RepoFetcher.core
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.tech.repo;version="1.0.0"
+Import-Package: javax.inject;version="0.0.0"
+Provide-Capability: osgi.service;objectClass:List<String>="com.tech.repo
+ .Irepo"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Service-Component: OSGI-INF/com.tech.repo.IrepoImpl.xml
+Sling-Model-Packages: com.tech.repo
+Tool: Bnd-3.3.0.201609221906

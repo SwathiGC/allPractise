@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>ServletsServices</comment>
+<entry key="createdBy">Admin</entry>
+<entry key="name">ServletsServices</entry>
+<entry key="created">2020-03-02T12:30:23.405+0530</entry>
+<entry key="groupId">com.raft.servletsResponse</entry>
+<entry key="version">1.0.0-SNAPSHOT</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="group">com.raft.servletsResponse</entry>
+<entry key="description">ServletsServices</entry>
+<entry key="artifactId">ServletsServices</entry>
+<entry key="path">/etc/packages/com.raft.servletsResponse/ServletsServices.zip</entry>
+</properties>

@@ -1,0 +1,21 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+<sly data-sly-call="${clientlib.css @ categories='myproject.components'}" />
+<sly data-sly-call="${clientlib.js @ categories='myproject.components'}" />
+<img id="urlResult">
+<div id="nameTag"></div><h1>
+    <p>Title:${properties.title}</p>
+
+    ===================================================
+    <p>IS Checked?:${properties.isCapital}</p>
+
+<p>Enter the number:${properties.number}</p>
+Select the value:${properties.radio}
+style the content:${properties.text @context='html'}
+<h1>Select the option:${properties.dropdown}</h1>
+
+
+
+<div data-sly-use.i="com.moonraft.slings.StudentInfo">
+      ${i.Message}
+</div>
+

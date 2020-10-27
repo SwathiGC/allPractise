@@ -1,0 +1,35 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1603198754513
+Build-Jdk: 1.8.0_241
+Built-By: Admin
+Bundle-Description: Core bundle of Osgi Config Info
+Bundle-ManifestVersion: 2
+Bundle-Name: OsgiCustomConfig - Core
+Bundle-SymbolicName: OsgiCustomConfig.core
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.osgi1.check.config;version="1.0.0",com.osgi1.check.c
+ onfigread;uses:="org.apache.sling.api.resource,org.apache.sling.models.
+ annotations";version="1.0.0",com.osgi1.check;version="1.0.0",com.osgi1.
+ check.model;uses:="javax.annotation,org.apache.sling.api,org.apache.sli
+ ng.api.resource,org.apache.sling.models.annotations";version="1.0.0",co
+ m.osgi1.check.serv;uses:="com.osgi1.check.config,javax.servlet,org.apac
+ he.sling.api,org.apache.sling.api.servlets";version="1.0.0"
+Import-Package: javax.inject;version="0.0.0",com.osgi1.check,com.osgi1.c
+ heck.config,javax.annotation;version="[1.3,2)",javax.servlet,org.apache
+ .sling.api;version="[2.3,3)",org.apache.sling.api.request;version="[2.4
+ ,3)",org.apache.sling.api.resource;version="[2.10,3)",org.apache.sling.
+ api.servlets;version="[2.2,3)",org.apache.sling.models.annotations;vers
+ ion="[1.5,2)",org.apache.sling.models.annotations.injectorspecific;vers
+ ion="[1.1,2)",org.osgi.framework;version="[1.8,2)",org.osgi.service.cm;
+ version="[1.5,2)",org.slf4j;version="[1.5,2)"
+Provide-Capability: osgi.service;objectClass:List<String>="com.osgi1.che
+ ck.INames",osgi.service;objectClass:List<String>="javax.servlet.Servlet
+ "
+Require-Capability: osgi.extender;filter:="(&(osgi.extender=osgi.compone
+ nt)(version>=1.3.0)(!(version>=2.0.0)))",osgi.ee;filter:="(&(osgi.ee=Ja
+ vaSE)(version=1.8))"
+Service-Component: OSGI-INF/com.osgi1.check.impl.NameImpl.xml,OSGI-INF/c
+ om.osgi1.check.serv.ReadNameServlet.xml
+Sling-Model-Packages: com.osgi1.check.impl;
+Tool: Bnd-3.3.0.201609221906
